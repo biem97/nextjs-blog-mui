@@ -1,6 +1,7 @@
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import Head from "next/head";
 import Date from "../../components/Date";
+import Script from 'next/script'
 import { GetStaticProps, GetStaticPaths } from "next";
 
 export default function Post({
@@ -24,6 +25,14 @@ export default function Post({
         </div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
+      
+      <Script src="https://utteranc.es/client.js"
+        repo="biem97/nextjs-blog-mui"
+        issue-term="title"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async
+        />
     </>
   );
 }
